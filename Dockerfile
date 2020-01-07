@@ -7,6 +7,9 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
     && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
     && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud \
     && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage \
+    # clients
+    && yum -y install \
+        mariadb \
     && yum -y install \
         atop \
         bcc \
@@ -15,12 +18,13 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
         dstat \
         ethtool \
         htop \
-        numactl \
-        lldpad \
         iotop \
         iproute \
+        lldpad \
         lsof \
         ltrace \
+        numactl \
+        openvswitch \
         perf \
         procps-ng \
         strace \
@@ -28,8 +32,6 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
         tcpdump \
         tiptop \
         tmux \
-        openvswitch \
-        mariadb \
     # performance benchmark tools
     # http://www.brendangregg.com/Perf/linux_benchmarking_tools.png
     && yum -y install \

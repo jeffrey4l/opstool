@@ -3,13 +3,20 @@
 This image contains most tools metioned in [Linux Performance](http://www.brendangregg.com/linuxperf.html)
 
 ```bash
-docker run -it \
-    --prividged \
+docker run \
+    -it \
+    --privileged \
     --net host \
     --pid host \
+    --ipc host \
+    --volume /dev:/dev \
+    --volume /sys:/sys \
+    --volume /proc:/proc \
     --volume /lib/modules:/lib/modules \
     --volume /etc/localtime:/etc/localtime \
-
+    --volume /run:/run \
+    opstool/opstool \
+    bash
 ```
 
 # Tools
