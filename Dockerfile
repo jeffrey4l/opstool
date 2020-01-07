@@ -1,5 +1,7 @@
 FROM centos:7
 
+ENV PATH="${PATH}:/usr/share/bcc/tools"
+
 RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
     && yum -y install \
         centos-release-openstack-train \
