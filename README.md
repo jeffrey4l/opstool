@@ -10,11 +10,12 @@ docker run \
     --pid host \
     --ipc host \
     --volume /dev:/dev \
-    --volume /sys:/sys \
-    --volume /proc:/proc \
+    --volume /etc/localtime:/etc/localtime:ro \
     --volume /lib/modules:/lib/modules \
-    --volume /etc/localtime:/etc/localtime \
+    --volume /proc:/proc \
     --volume /run:/run \
+    --volume /sys:/sys \
+    --volume /usr/src:/usr/src \
     opstool/opstool \
     bash
 ```

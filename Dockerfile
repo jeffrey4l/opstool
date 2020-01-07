@@ -1,6 +1,7 @@
 FROM centos:7
 
 ENV PATH="${PATH}:/usr/share/bcc/tools"
+WORKDIR /root
 
 RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
     && yum -y install \
